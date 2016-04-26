@@ -103,7 +103,7 @@ class CalcFramework(DynamicModel):
                                       self.modelTime.month,\
                                       self.modelTime.day,0)
         for lc_type in ["forest", "grassland", "irrPaddy", "irrNonPaddy"]:
-            file_name = self.output['folder'] + "/daily_potential_evaporation_" + variable_unit + "_" + lc_type + ".nc"
+            file_name = self.output['folder'] + "/daily_potential_evaporation_" + self.variable_unit + "_" + lc_type + ".nc"
             self.netcdf_report.data2NetCDF(file_name,\
                                            self.variable_name,\
                                            pcr.pcr2numpy(potential_evaporation[lc_type], vos.MV),\
@@ -119,7 +119,7 @@ class CalcFramework(DynamicModel):
             self.monthly_accumulator[lc_type] = self.monthly_accumulator[lc_type] + potential_evaporation[lc_type]
         if self.modelTime.endMonth:
             for lc_type in ["forest", "grassland", "irrPaddy", "irrNonPaddy"]:
-                file_name = self.output['folder'] + "/month_potential_evaporation_" + variable_unit + "_" + lc_type + ".nc"
+                file_name = self.output['folder'] + "/month_potential_evaporation_" + self.variable_unit + "_" + lc_type + ".nc"
                 self.netcdf_report.data2NetCDF(file_name,\
                                                self.variable_name,\
                                                pcr.pcr2numpy(self.monthly_accumulator[lc_type]/calendar.monthrange(self.modelTime.year, self.modelTime.month)[1], vos.MV),\
