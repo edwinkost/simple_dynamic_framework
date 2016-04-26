@@ -48,9 +48,9 @@ output['netcdf_attributes']['comment'    ]  = "None"
 
 # prepare the output directory
 try:
-    os.makedirs(output_folder)
+    os.makedirs(output['folder'])
 except:
-    os.system('rm -r ' + output_folder)
+    os.system('rm -r ' + output['folder'])
     pass
 
 startDate     = "2001-01-01" # YYYY-MM-DD
