@@ -94,6 +94,7 @@ class CalcFramework(DynamicModel):
                                   cloneMapFileName = self.cloneMapFileName)
                
         # calculate
+        potential_evaporation = {}
         for lc_type in ["forest", "grassland", "irrPaddy", "irrNonPaddy"]:
             potential_evaporation[lc_type] = referencePotET * cropKC[lc_type]
         
