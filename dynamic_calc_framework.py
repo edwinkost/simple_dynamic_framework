@@ -4,7 +4,7 @@
 import os
 import sys
 import datetime
-import calenda
+import calendar
 
 import pcraster as pcr
 from pcraster.framework import DynamicModel
