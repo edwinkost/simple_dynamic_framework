@@ -87,7 +87,7 @@ class CalcFramework(DynamicModel):
         cropKC = {}
         for lc_type in ["forest", "grassland", "irrPaddy", "irrNonPaddy"]:
             cropKC[lc_type] = vos.netcdf2PCRobjClone(\
-                                  self.input_files['cropKC']['file_name'], \
+                                  self.input_files['cropKC'][lc_type], \
                                   self.input_files['cropKC']['variable_name'], \
                                   str(self.modelTime.fulldate), 
                                   useDoy = None,
