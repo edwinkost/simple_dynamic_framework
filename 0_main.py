@@ -70,7 +70,7 @@ def main():
     
     # time object
     modelTime = ModelTime() # timeStep info: year, month, day, doy, hour, etc
-    modelTime.getStartEndTimeSteps(startDate,endDate,nrOfTimeSteps)
+    modelTime.getStartEndTimeSteps(startDate, endDate)
     
     calculationModel = CalcFramework(cloneMapFileName,\
                                      input_files, \
