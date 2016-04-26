@@ -93,14 +93,14 @@ class CalcFramework(DynamicModel):
                                   cloneMapFileName = self.cloneMapFileName)
                
         # calculate
-        for lc_type in ["forest", "grassland", "irrPaddy", "irrNonPaddy"]
+        for lc_type in ["forest", "grassland", "irrPaddy", "irrNonPaddy"]:
             potential_evaporation[lc_type] = referencePotET * cropKC[lc_type]
         
         # reporting for daily values
         timeStamp = datetime.datetime(self.modelTime.year,\
                                       self.modelTime.month,\
                                       self.modelTime.day,0)
-        for lc_type in ["forest", "grassland", "irrPaddy", "irrNonPaddy"]
+        for lc_type in ["forest", "grassland", "irrPaddy", "irrNonPaddy"]:
             file_name = self.output['folder'] + "/daily_potential_evaporation_" + variable_unit + "_" + lc_type + ".nc"
             self.netcdf_report.data2NetCDF(file_name,\
                                            self.variable_name,\
