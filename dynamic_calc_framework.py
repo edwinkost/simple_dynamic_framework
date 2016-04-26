@@ -120,6 +120,9 @@ class CalcFramework(DynamicModel):
         if self.modelTime.endMonth:
             for lc_type in ["forest", "grassland", "irrPaddy", "irrNonPaddy"]:
                 file_name = self.output['folder'] + "/month_potential_evaporation_" + self.variable_unit + "_" + lc_type + ".nc"
+                
+                print file_name
+                
                 self.netcdf_report.data2NetCDF(file_name,\
                                                self.variable_name,\
                                                pcr.pcr2numpy(self.monthly_accumulator[lc_type]/calendar.monthrange(self.modelTime.year, self.modelTime.month)[1], vos.MV),\
