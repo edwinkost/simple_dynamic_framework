@@ -119,7 +119,7 @@ class CalcFramework(DynamicModel):
             self.monthly_accumulator[lc_type] = self.monthly_accumulator[lc_type] + potential_evaporation[lc_type]
         if self.modelTime.endMonth:
             for lc_type in ["forest", "grassland", "irrPaddy", "irrNonPaddy"]:
-                file_name = self.output['folder'] + "/month_potential_evaporation_" + self.variable_unit + "_" + lc_type + ".nc"
+                file_name = self.output['folder'] + "/monthly_potential_evaporation_" + self.variable_unit + "_" + lc_type + ".nc"
                 
                 print file_name
                 
