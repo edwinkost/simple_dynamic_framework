@@ -84,7 +84,7 @@ class CalcFramework(DynamicModel):
                              useDoy = None, \
                              cloneMapFileName = self.cloneMapFileName)
         cropKC = {}
-        for lc_type in ["forest", "grassland", "irrPaddy", "irrNonPaddy"]
+        for lc_type in ["forest", "grassland", "irrPaddy", "irrNonPaddy"]:
             cropKC[lc_type] = vos.netcdf2PCRobjClone(\
                                   self.input_files['cropKC']['file_name'], \
                                   self.input_files['cropKC']['variable_name'], \
