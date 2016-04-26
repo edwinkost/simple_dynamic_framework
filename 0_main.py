@@ -61,7 +61,7 @@ endDate       = "2007-12-31"
 def main():
     
     # prepare logger and its directory
-    log_file_location = output_folder+"/log/"
+    log_file_location = output['folder'] + "/log/"
     try:
         os.makedirs(log_file_location)
     except:
