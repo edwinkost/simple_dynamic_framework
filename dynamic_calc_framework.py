@@ -110,13 +110,13 @@ class CalcFramework(DynamicModel):
         # reporting for monthly values
         # - reset at the beginning of the month:
         if self.modelTime.isFirstDayOfMonth:
-            for lc_type in ["forest", "grassland", "irrPaddy", "irrNonPaddy"]
+            for lc_type in ["forest", "grassland", "irrPaddy", "irrNonPaddy"]:
                 self.monthly_accumulator[lc_type] = pcr.scalar(0.0)
         # - accumulate until the last day of the month:
-        for lc_type in ["forest", "grassland", "irrPaddy", "irrNonPaddy"]
+        for lc_type in ["forest", "grassland", "irrPaddy", "irrNonPaddy"]:
             self.monthly_accumulator[lc_type] = self.monthly_accumulator[lc_type] + potential_evaporation[lc_type]
         if self.modelTime.endMonth:
-            for lc_type in ["forest", "grassland", "irrPaddy", "irrNonPaddy"]
+            for lc_type in ["forest", "grassland", "irrPaddy", "irrNonPaddy"]:
                 file_name = self.output['folder'] + "/month_potential_evaporation_" + variable_unit + "_" + lc_type + ".nc"
                 self.netcdf_report.data2NetCDF(file_name,\
                                                self.variable_name,\
