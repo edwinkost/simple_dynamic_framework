@@ -4,6 +4,7 @@
 import os
 import sys
 import datetime
+import calenda
 
 import pcraster as pcr
 from pcraster.framework import DynamicModel
@@ -120,5 +121,5 @@ class CalcFramework(DynamicModel):
                 file_name = self.output['folder'] + "/month_potential_evaporation_" + variable_unit + "_" + lc_type + ".nc"
                 self.netcdf_report.data2NetCDF(file_name,\
                                                self.variable_name,\
-                                               pcr.pcr2numpy(self.monthly_accumulator[lc_type], vos.MV),\
+                                               pcr.pcr2numpy(self.monthly_accumulator[lc_type]/calendar.monthrange(self.modelTime.year, self.modelTime.month)[1], vos.MV),\
                                                timeStamp)
